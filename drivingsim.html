@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <title></title>
+  </head>
+  <body style="text-align:center;">
+
+    <div>
+      <script>
+      $(function() {
+
+        var body = $(document.body);
+        var button = $("<button>");
+        body.append(button);
+        button.append("Click Me");
+        button.button();
+
+
+      });
+      </script>
+    </div>
+  </body>
+</html>
