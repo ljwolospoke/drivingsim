@@ -37,6 +37,22 @@
 
 });
 
+$(function() {
+  console.log("hello");
+  var body = $(document.body);
+  var button = $("<button>");
+  body.append(button);
+  button.append("Start");
+  button.button();
+  button.css("width", "300px");
+  var datepicker = $("<input>");
+  body.append(datepicker);
+  datepicker.attr("type", "text");
+  datepicker.datepicker();
+  datepicker.change(function() {
+    console.log(datepicker.val());
+  });
+});
 
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -52,7 +68,7 @@
   </div>
   <div class="box b">
     <div class="image"></div>
-    
+
 
   </div>
   <div class="box c">
