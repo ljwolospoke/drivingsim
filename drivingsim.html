@@ -3,17 +3,48 @@
   <head>
     <meta charset="UTF-8">
     <title>Car Simulator</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="jquery-3.3.1.min.js"></script>
     <script src="jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="jquery-ui.min.css">
+    <style>
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.js"></script>
+
+<script src="circlesize.js"></script>
+    </body>
+
+    </style>
+    <body>
     <script>
+    var jsonCircles = [
+      { "x_axis": 30, "y_axis": 30, "radius": 20, "color" : "green" },
+       { "x_axis": 70, "y_axis": 70, "radius": 20, "color" : "yellow"},
+       { "x_axis": 110, "y_axis": 100, "radius": 20, "color" : "red"}];
+
+     var svgContainer = d3.select("body").append("svg")
+                                         .attr("width", 200)
+                                         .attr("height", 200);
+
+    var circles = svgContainer.selectAll("circle")
+                              .data(jsonCircles)
+                              .enter()
+                              .append("circle");
+
+    var circleAttributes = circles
+                           .attr("cx", function (d) { return d.x_axis; })
+                           .attr("cy", function (d) { return d.y_axis; })
+                           .attr("r", function (d) { return d.radius; })
+                           .style("fill", function(d) { return d.color; });
+
     $(document).ready(function(){
     $("#hero").attr("tabindex",-1).focus();
     $("#hero").on('keydown', function(event){
         switch(event.which){
             case 37:
                 $('#hero').stop().animate({
-                    left: '-=20'
+                    left: '-=35'
                 }); //left arrow key
                 break;
             case 38:
@@ -22,8 +53,8 @@
                 }); //up arrow key
                 break;
             case 39:
-                $('#hero').stop().animate({ 
-                    left: '+=20'
+                $('#hero').stop().animate({
+                    left: '+=35'
                 }); //right arrow key
                 break;
             case 40:
@@ -37,36 +68,17 @@
 
 });
 
-
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body>
+
+      <h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
+
+    <div class="image"></div>​
+    <img src="cone.png">
+    <div class="image"></div>​
   <img src="car.jpg" id ="hero" alt="hero">
-    <h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
-    <div class="wrapper">
-  <div class="box a">
-
-
-  </div>
-  <div class="box b">
-
-
-  </div>
-  <div class="box c">
-
-
-
-  </div>
-  <div class="box d">
-
-
-  </div>
-  <div class="box e">
-
-
-  </div>
-
 
 
 
