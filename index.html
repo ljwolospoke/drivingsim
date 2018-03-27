@@ -1,90 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Car Simulator</title>
-    <script src="jquery-3.3.1.min.js"></script>
-    <script>
-    $(document).ready(function(){
-    $("#hero").attr("tabindex",-1).focus();
-    $("#hero").on('keydown', function(event){
-        switch(event.which){
-            case 37:
-                $('#hero').stop().animate({
-                    left: '-=20'
-                }); //left arrow key
-                break;
-            case 38:
-                $('#hero').stop().animate({
-                            top: '-=20'
-                }); //up arrow key
-                break;
-            case 39:
-                $('#hero').stop().animate({
-                    left: '+=20'
-                }); //right arrow key
-                break;
-            case 40:
-                $('#hero').stop().animate({
-                    top: '+=20'
-                }); //bottom arrow key
-                break;
-
-        }
-    });
-
-});
-
-
-    </script>
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
-  <body>
-  <img src="car.jpg" id ="hero" alt="hero">
-    <h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
-    <div class="wrapper">
-  <div class="box a">
-
-
-  </div>
-  <div class="box b">
-
-
-  </div>
-  <div class="box c">
-
-
-
-  </div>
-  <div class="box d">
-
-
-  </div>
-  <div class="box e">
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<head>
+<meta charset ="UTF-8">
+<title>Car Simulator</title>
+<script src="jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="index.css">
+<script src="jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jquery-ui.min.css"></scipt>
+<script type="text/javascript" src ="index.js"></script>
+<body>
+  <img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
+  <img src="pokemon2.jpg" id="second" align="right">
+  <input class="stopwatch" id="stopwatch" type="text" value="0:0:0" ><br>
+	<input class="button" id="startandstopbutton" type="button" value="Start/Stop" onClick="startandstop();"><br>
+	<input class="button" id="marklapbutton" type="button" value="Split/Mark Lap" onClick="marklap();" ><br>
+	<input class="button" id="resetbutton" type="button" value="Reset Stopwatch" onClick="resetstopwatch();"><br>
+	<textarea class="lap" id="lapdetails"></textarea>
 </body>
+</head>
 </html>
