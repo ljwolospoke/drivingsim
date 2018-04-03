@@ -1,90 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Car Simulator</title>
-    <script src="jquery-3.3.1.min.js"></script>
-    <script>
-    $(document).ready(function(){
-    $("#hero").attr("tabindex",-1).focus();
-    $("#hero").on('keydown', function(event){
-        switch(event.which){
-            case 37:
-                $('#hero').stop().animate({
-                    left: '-=20'
-                }); //left arrow key
-                break;
-            case 38:
-                $('#hero').stop().animate({
-                            top: '-=20'
-                }); //up arrow key
-                break;
-            case 39:
-                $('#hero').stop().animate({
-                    left: '+=20'
-                }); //right arrow key
-                break;
-            case 40:
-                $('#hero').stop().animate({
-                    top: '+=20'
-                }); //bottom arrow key
-                break;
-
-        }
-    });
-
-});
-
-
-    </script>
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
-  <body>
-  <img src="car.jpg" id ="hero" alt="hero">
-    <h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
-    <div class="wrapper">
-  <div class="box a">
-
-
-  </div>
-  <div class="box b">
-
-
-  </div>
-  <div class="box c">
-
-
-
-  </div>
-  <div class="box d">
-
-
-  </div>
-  <div class="box e">
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<head>
+<meta charset ="UTF-8">
+<title>Car Simulator</title>
+<script src="jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="index.css">
+<script src="jquery-ui.min.js"></script>
+<scirpt src="d3.min.js"
+<link rel="stylesheet" href="jquery-ui.min.css"></scipt>
+<script type="text/javascript" src ="index.js"></script>
+<body>
+  <img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
+  <img src="pokemon2.jpg" id="second" align="right">
+  <div>Simulator ends in <span id="time">10:00</span> minutes!</div>
 </body>
+</head>
 </html>
