@@ -8,37 +8,25 @@ h1 {
 
 }
 
-img[src*="redlight.png"]{
-  width: 50px;
-  height: 50px;
-  transform: rotate(360deg);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 
 
-}
 
-img[src*="yellowlight.png"]{
+.box {
+  margin: 50px auto;
+  background: red;
   width: 100px;
   height: 100px;
-  transform: rotate(360deg);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-
 }
-
-img[src*="greenlight.png"]{
-  width: 50px;
-  height: 50px;
+.box:hover {
   transform: rotate(360deg);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-
+  background: green;
+  border-radius: 50%;
+}
+.rotate {
+  transition: all 0.5s ease-in-out;
+}
+.rotate:hover {
+  transition: all 1s ease-in-out;
 }
 
 
@@ -86,12 +74,7 @@ img{
 img[src*="car.jpg"]{
 	width: 100px;
 	height: 100px;
-  float: left;
-}
-
-
-img[src*="car.jpg"]{
-	position: absolute;
-	top: 400px;
+  position: absolute;
+	top: 490px;
 	left: 25px;
 }

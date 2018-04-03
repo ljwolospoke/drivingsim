@@ -3,9 +3,62 @@
   <head>
     <meta charset="UTF-8">
     <title>Car Simulator</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="jquery-ui.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 65px;
+  margin-top:0px;
+}
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="carsimulator.js"></script>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = seconds + "s ";
+
+    // If the count down is over, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+
+$(function() {
+  carsimulator.listen(function(carX, carY) {
+    $("#hero").css("left", carX);
+    $("#hero").css("top", carY);
+  });
+});
+</script>
+
+</body>
+</html>
+
+
     <style>
 
 
@@ -23,26 +76,6 @@
 
 
 
-
-    var jsonCircles = [
-   { "x_axis": 30, "y_axis": 30, "radius": 20, "color" : "green" },
-    { "x_axis": 70, "y_axis": 70, "radius": 20, "color" : "yellow"},
-    { "x_axis": 110, "y_axis": 100, "radius": 20, "color" : "red"}];
-
-  var svgContainer = d3.select("body").append("svg")
-                                      .attr("width", 200)
-                                      .attr("height", 200);
-
- var circles = svgContainer.selectAll("circle")
-                           .data(jsonCircles)
-                           .enter()
-                           .append("circle");
-
- var circleAttributes = circles
-                        .attr("cx", function (d) { return d.x_axis; })
-                        .attr("cy", function (d) { return d.y_axis; })
-                        .attr("r", function (d) { return d.radius; })
-                        .style("fill", function(d) { return d.color; });
 
 
 
@@ -79,12 +112,18 @@
 
 });
 
+
+
+
     </script>
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body>
 
       <h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
+      <div class="container">
+<div class="box rotate"></div>
+</div>
 
     <div class="image"></div>​
     <img src="cone.png">
