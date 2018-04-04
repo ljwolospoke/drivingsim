@@ -1,0 +1,84 @@
+h1 {
+  text-align: center;
+  color: red;
+  text-shadow: 1px 1px black;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 25px;
+
+}
+
+
+
+
+.box {
+  margin: 50px auto;
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+.box:hover {
+  transform: rotate(360deg);
+  background: green;
+  border-radius: 50%;
+}
+.rotate {
+  transition: all 0.5s ease-in-out;
+}
+.rotate:hover {
+  transition: all 1s ease-in-out;
+}
+
+
+img {
+  width: 17px;
+  height: 17px;
+  transform: rotate(360deg);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+
+}
+
+
+.image { position: relative; top: +90px; }
+
+div.image {
+   content:url(road.jpg);
+   width: 1680px;
+   height: 200px;
+   filter: contrast(200%) brightness(150%);
+   filter: drop-shadow(6px 6px 10px gray);
+
+
+}
+
+
+
+
+
+
+
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	max-width: 100%;
+}
+
+img[src*="car.jpg"]{
+	width: 100px;
+	height: 100px;
+  position: absolute;
+	top: 490px;
+	left: 25px;
+
+#stopSign{
+  height: 100px;
+  width: 100px;
+}
