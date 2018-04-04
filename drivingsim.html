@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Car Simulator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="drivingsim.css">
 <style>
 p {
   text-align: center;
@@ -14,12 +15,8 @@ p {
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
 <script src="jquery-ui.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
 <script src="carsimulator.js"></script>
-</head>
-<body>
-
-<p id="demo"></p>
-
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
@@ -53,102 +50,53 @@ $(function() {
     $("#hero").css("top", carY);
   });
 });
-</script>
 
-</body>
-</html>
+$(document).ready(function(){
+  $("#hero").attr("tabindex",-1).focus();
+  $("#hero").on('keydown', function(event){
+      switch(event.which){
+          case 37:
+              $('#hero').stop().animate({
+                  left: '-=35'
+              }); //left arrow key
+              break;
+          case 38:
+              $('#hero').stop().animate({
+                          top: '-=20'
+              }); //up arrow key
+              break;
+          case 39:
+              $('#hero').stop().animate({
+                  left: '+=35'
+              }); //right arrow key
+              break;
+          case 40:
+              $('#hero').stop().animate({
+                  top: '+=20'
+              }); //bottom arrow key
+              break;
 
-
-    <style>
-
-
-
-</style>
-<body>
-<script src="http://d3js.org/d3.v3.js"></script>
-
-<script src="circlesize.js"></script>
-    </body>
-
-    </style>
-    <body>
-    <script>
-
-
-
-
-
-
-
-
-
-    $(document).ready(function(){
-    $("#hero").attr("tabindex",-1).focus();
-    $("#hero").on('keydown', function(event){
-        switch(event.which){
-            case 37:
-                $('#hero').stop().animate({
-                    left: '-=35'
-                }); //left arrow key
-                break;
-            case 38:
-                $('#hero').stop().animate({
-                            top: '-=20'
-                }); //up arrow key
-                break;
-            case 39:
-                $('#hero').stop().animate({
-                    left: '+=35'
-                }); //right arrow key
-                break;
-            case 40:
-                $('#hero').stop().animate({
-                    top: '+=20'
-                }); //bottom arrow key
-                break;
-
-        }
-    });
-
+      }
+  });
 });
+</script>
+</head>
+<body>
 
+<img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
+<div>Simulater ends in <span id="time">05:00</span> minutes!</div>
 
+<p id="demo"></p>
 
-
-    </script>
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
-  <body>
-
-      <h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
-      <div class="container">
-<div class="box rotate"></div>
+<h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
+<div class="container">
+  <div class="box rotate"></div>
 </div>
 
-    <div class="image"></div>​
-    <img src="cone.png">
-    <div class="image"></div>​
-  <img src="car.jpg" id ="hero" alt="hero">
-
-
-
-
-
-
-
-
-
-
-  <img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
-  <div>Simulater ends in <span id="time">05:00</span> minutes!</div>
-
-
-
-
-
-
-
-
+<div class="image"></div>​
+<img src="cone.png">
+<div class="image"></div>​
+<img src="car.jpg" id ="hero" alt="hero">
 
 
 </body>
