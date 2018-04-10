@@ -7,6 +7,7 @@ var carsimulator = (function() {
   var carX = 100;
   var carY = 500;
 
+
   setInterval(function() {
     carX += 1;
     //carY += 1;
