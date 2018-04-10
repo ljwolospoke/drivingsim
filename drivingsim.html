@@ -81,7 +81,7 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body>
+<body style="text-align:center;">
 
 <img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
 <div>Simulater ends in <span id="time">05:00</span> minutes!</div>
@@ -91,6 +91,24 @@ $(document).ready(function(){
 <h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
 <div class="container">
   <div class="box rotate"></div>
+</div>
+<div>
+  <script>
+  $(function() {
+
+    var body = $(document.body);
+    var button = $("<button>");
+    body.append(button);
+    button.append("Click Me");
+    button.button();
+    $("button").click(function() {
+      var carX = 100;
+      var carY = 500;
+    });
+
+
+  });
+  </script>
 </div>
 
 <div class="image"></div>​
