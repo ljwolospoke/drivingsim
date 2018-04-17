@@ -44,16 +44,12 @@ var x = setInterval(function() {
     }
 }, 1000);
 
-
 $(function() {
   carsimulator.listen(function(carX, carY) {
     $("#hero").css("left", carX);
     $("#hero").css("top", carY);
   });
 });
-
-
-
 
 $(document).ready(function(){
   $("#hero").attr("tabindex",-1).focus();
@@ -71,7 +67,7 @@ $(document).ready(function(){
               break;
           case 39:
               $('#hero').stop().animate({
-                  left: '+=35' 
+                  left: '+=35'
               }); //right arrow key
               break;
           case 40:
@@ -85,9 +81,9 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body>
+<body style="text-align:center;">
 
-
+<img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
 <div>Simulater ends in <span id="time">05:00</span> minutes!</div>
 
 <p id="demo"></p>
@@ -96,13 +92,29 @@ $(document).ready(function(){
 <div class="container">
   <div class="box rotate"></div>
 </div>
+<div>
+  <script>
+  $(function() {
+    //Lance
+    var body = $(document.body);
+    var button = $("<button>");
+    body.append(button);
+    button.append("Reset");
+    button.button();
+    $("button").click(function() {
+      var carX = 100;
+      var carY = 500;
+    });
+
+
+  });
+  </script>
+</div>
 
 <div class="image"></div>​
-<img src="cone.png" id="parkingCone" alt="parking cone" align="center">
-<img src="cone.png" id="parkingCone2" alt="parking cone2" align="left">
-<img src="cone.png" id="parkingCone3" alt="parking cone3" align="right">
+<img src="cone.png">
 <div class="image"></div>​
-<img src="car.png" id ="hero" alt="hero">
+<img src="car.jpg" id ="hero" alt="hero">
 
 
 </body>
