@@ -1,20 +1,109 @@
 <!DOCTYPE html>
-<head>
-<meta charset ="UTF-8">
-<meta http-equiv="refresh" content="60"><!--refresh every
-  60 seconds-->
-<title>Car Simulator</title>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Car Simulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="drivingsim.css">
+<style>
+p {
+  text-align: center;
+  font-size: 65px;
+  margin-top:0px;
+}
+</style>
+<script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="jquery-3.3.1.min.js"></script>
-<link rel="stylesheet" href="drivingsim.css">
 <script src="jquery-ui.min.js"></script>
-<scirpt src="d3.min.js"
-<link rel="stylesheet" href="jquery-ui.min.css"></scipt>
-<script type="text/javascript" src ="drivingsim.js"></script>
-<body>
-  <img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
-  <div>Simulater ends in <span id="time">01:00</span> minutes!</div>
-  <div id="done">After the min. The page will refresh </div>
-  <img src="face.jpg" alt="smiley" height="40" width="40">
-</body>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="carsimulator.js"></script>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = seconds + "s ";
+
+    // If the count down is over, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+
+
+$(function() {
+  carsimulator.listen(function(carX, carY) {
+    $("#hero").css("left", carX);
+    $("#hero").css("top", carY);
+  });
+});
+
+
+
+
+$(document).ready(function(){
+  $("#hero").attr("tabindex",-1).focus();
+  $("#hero").on('keydown', function(event){
+      switch(event.which){
+          case 37:
+              $('#hero').stop().animate({
+                  left: '-=35'
+              }); //left arrow key
+              break;
+          case 38:
+              $('#hero').stop().animate({
+                          top: '-=20'
+              }); //up arrow key
+              break;
+          case 39:
+              $('#hero').stop().animate({
+                  left: '+=35'
+              }); //right arrow key
+              break;
+          case 40:
+              $('#hero').stop().animate({
+                  top: '+=20'
+              }); //bottom arrow key
+              break;
+
+      }
+  });
+});
+</script>
 </head>
+<body> 
+
+
+<div>Simulater ends in <span id="time">05:00</span> minutes!</div>
+
+<p id="demo"></p>
+
+<h1> Lance, Patrick, Brandon And Sheree's Simulator </h1>
+<div class="container">
+  <div class="box rotate"></div>
+</div>
+
+<div class="image"></div>​
+<img src="cone.png" id="parkingCone" alt="parking cone" align="center">
+<img src="cone.png" id="parkingCone2" alt="parking cone2" align="left">
+<img src="cone.png" id="parkingCone3" alt="parking cone3" align="right">
+<div class="image"></div>​
+<img src="car.png" id ="hero" alt="hero">
+
+
+</body>
 </html>

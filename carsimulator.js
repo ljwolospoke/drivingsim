@@ -1,5 +1,3 @@
-// this is the model
-// is should NOT contain any html or css
 var carsimulator = (function() {
 
   // this is the internal state of the model
@@ -8,11 +6,11 @@ var carsimulator = (function() {
   var carY = 500;
 
 
-  setInterval(function() {
-    carX += 1;
+  //setInterval(function() {
+    //carX += 1;
     //carY += 1;
-    notify();
-  }, 35);
+    //notify();
+  //}, 35);
 
   // store all the listeners
   // we have to call all of them if something changes
@@ -37,5 +35,7 @@ var carsimulator = (function() {
   return {
     listen: listen
   };
+
+
 
 })();
