@@ -44,12 +44,16 @@ var x = setInterval(function() {
     }
 }, 1000);
 
+
 $(function() {
   carsimulator.listen(function(carX, carY) {
     $("#hero").css("left", carX);
     $("#hero").css("top", carY);
   });
 });
+
+
+
 
 $(document).ready(function(){
   $("#hero").attr("tabindex",-1).focus();
@@ -81,9 +85,9 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body>
+<body> 
 
-<img src="pokemonstop.jpg" id="stopSign" alt="stop sign" align="right">
+
 <div>Simulater ends in <span id="time">05:00</span> minutes!</div>
 
 <p id="demo"></p>
@@ -94,7 +98,9 @@ $(document).ready(function(){
 </div>
 
 <div class="image"></div>​
-<img src="cone.png">
+<img src="cone.png" id="parkingCone" alt="parking cone" align="center">
+<img src="cone.png" id="parkingCone2" alt="parking cone2" align="left">
+<img src="cone.png" id="parkingCone3" alt="parking cone3" align="right">
 <div class="image"></div>​
 <img src="car.png" id ="hero" alt="hero">
 

@@ -30,18 +30,38 @@ h1 {
 }
 
 
-img {
+#parkingCone {
   width: 17px;
   height: 17px;
   transform: rotate(360deg);
   display: block;
   margin-left: auto;
   margin-right: auto;
-
-
+  position: relative; top: -30px;
 
 }
 
+#parkingCone2 {
+  width: 17px;
+  height: 17px;
+  transform: rotate(360deg);
+  display: block;
+  margin-left: 17px;
+  margin-right: 17px;
+  position: relative; top: -25px;
+  left: 200px;
+}
+
+#parkingCone3 {
+  width: 17px;
+  height: 17px;
+  transform: rotate(360deg);
+  display: block;
+  margin-left: 17px;
+  margin-right: 17px;
+  position: relative; top: -80px;
+
+}
 
 .image { position: relative; top: +90px; }
 
@@ -77,11 +97,3 @@ img[src*="car.png"]{
   position: absolute;
 	top: 490px;
 	left: 25px;
-  
-
-
-
-#stopSign {
-  height: 100px;
-  width: 100px;
-}
