@@ -1,3 +1,4 @@
+
 var carsimulator = (function() {
 
   // this is the internal state of the model
@@ -61,3 +62,4 @@ window.onload = function () {
     startTimer(oneMinutes, display);
 
 };
+
