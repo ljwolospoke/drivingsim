@@ -1,3 +1,4 @@
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
