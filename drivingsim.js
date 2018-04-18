@@ -21,7 +21,9 @@ window.onload = function () {
     startTimer(oneMinutes, display);
 
 };
-var carsimulator = (function() {
+
+
+var drivingsim = (function() {
 
   // this is the internal state of the model
   // no one can access this directly
