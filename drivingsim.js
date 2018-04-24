@@ -62,4 +62,3 @@ window.onload = function () {
     startTimer(oneMinutes, display);
 
 };
-
