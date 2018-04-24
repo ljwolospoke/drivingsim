@@ -85,12 +85,6 @@ div.image {
 
 
 
-
-body{
-	margin: 0;
-	padding: 0;
-}
-
 img{
 	max-width: 100%;
 }
@@ -103,10 +97,19 @@ img[src*="car.png"]{
 	left: 25px;
 
 }
-#stopSign{
-  position: relative;
-  bottom: 490px;
-  height: 50px;
-  width: 50px;
-  left: 40px;
+
+body {
+  margin: 0;
+  background: #222;
+  min-width: 960px;
+}
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+circle {
+  fill: none;
+  stroke-width: 2.5px;
 }
