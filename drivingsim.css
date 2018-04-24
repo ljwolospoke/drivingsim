@@ -102,10 +102,11 @@ img[src*="car.png"]{
 	top: 490px;
 	left: 25px;
 
-
-
-
-  #stopSign {
-    height: 100px;
-    width: 100px;
-  }
+}
+#stopSign{
+  position: relative;
+  bottom: 490px;
+  height: 50px;
+  width: 50px;
+  left: 20px
+}
