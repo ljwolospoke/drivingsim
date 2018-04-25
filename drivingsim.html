@@ -79,7 +79,24 @@ $(document).ready(function(){
 <img src="cone.png" id="parkingCone3" alt="parking cone3" align="right">
 <div class="image"></div>​
 <img src="car.png" id ="hero" alt="hero">
+<div>
+  <script>
+  $(function() {
+    //Lance
+    var body = $(document.body);
+    var button = $("<button>");
+    body.append(button);
+    button.append("Reset");
+    button.button();
+    $("button").click(function() {
+      var carX = 100;
+      var carY = 500;
+    });
 
+
+  });
+  </script>
+</div>
 
 </body>
 </html>
